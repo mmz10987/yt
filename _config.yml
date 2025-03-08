@@ -1,0 +1,8 @@
+title: 我的个人网站
+theme: minima
+plugins:
+  - jekyll-feed
+collections:
+  posts:
+    output: true
+    permalink: /posts/:title/
