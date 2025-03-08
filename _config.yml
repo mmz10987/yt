@@ -6,3 +6,6 @@ collections:
   posts:
     output: true
     permalink: /posts/:title/
+    # 禁用默认页脚
+minima:
+  show_footer: false
