@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   const searchResults = document.getElementById('searchResults');
+  const postList = document.querySelector('.post-list'); // 获取文章列表元素
 
   function getMatchCount(title, query) {
-    const regex = new RegExp(query, 'gi');
+    const regex = new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
     return (title.match(regex) || []).length;
   }
 
@@ -11,9 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const query = searchInput.value.trim().toLowerCase();
     
     if (!query) {
-      searchResults.innerHTML = '';
+      searchResults.style.display = 'none'; // 隐藏结果框
+      postList.style.display = 'block'; // 显示全部文章
       return;
     }
+
+    searchResults.style.display = 'block'; // 显示结果框
+    postList.style.display = 'none'; // 隐藏文章列表
 
     const results = window.posts
       .map(post => ({
