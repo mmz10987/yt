@@ -9,7 +9,18 @@ layout: default
   </div>
 
   <h1>最新文章</h1>
-  [...原有内容不变...]
+    
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <h2>
+          {{ post.title }}
+        </h2>
+        <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <p>{{ post.excerpt }}</p>
+      </li>
+    {% endfor %}
+  </ul>
 </div>
 
 <!-- 文章数据输出 -->
