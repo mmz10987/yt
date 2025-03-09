@@ -1,33 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   const searchResults = document.getElementById('searchResults');
-  const postList = document.querySelector('.post-list'); // 获取文章列表元素
+  const postList = document.querySelector('.post-list');
 
-  function getMatchCount(title, query) {
-    const regex = new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
-    return (title.match(regex) || []).length;
+  // 增强的匹配函数
+  function getMatchScore(title, query) {
+    const cleanQuery = query.replace(/[^\w\u4e00-\u9fa5]/g, ''); // 去除非中文字符和数字
+    const keywords = cleanQuery.toLowerCase().split('');
+    const cleanTitle = title.toLowerCase().replace(/[^\w\u4e00-\u9fa5]/g, '');
+    
+    return keywords.reduce((score, keyword) => {
+      return score + (cleanTitle.includes(keyword) ? 1 : 0);
+    }, 0);
   }
 
   function performSearch() {
-    const query = searchInput.value.trim().toLowerCase();
+    const query = searchInput.value.trim();
     
     if (!query) {
-      searchResults.style.display = 'none'; // 隐藏结果框
-      postList.style.display = 'block'; // 显示全部文章
+      searchResults.style.display = 'none';
+      postList.style.display = 'block';
       return;
     }
-
-    searchResults.style.display = 'block'; // 显示结果框
-    postList.style.display = 'none'; // 隐藏文章列表
 
     const results = window.posts
       .map(post => ({
         ...post,
-        score: getMatchCount(post.title.toLowerCase(), query)
+        score: getMatchScore(post.title, query)
       }))
       .filter(post => post.score > 0)
       .sort((a, b) => b.score - a.score);
 
+    searchResults.style.display = 'block';
+    postList.style.display = 'none';
     displayResults(results);
   }
 
