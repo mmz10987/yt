@@ -9,7 +9,12 @@ layout: default
   </div>
 
   <h1>最新文章</h1>
-    
+---
+layout: default
+---
+<div class="home">
+  <h1>最新文章</h1>
+  
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
@@ -21,6 +26,7 @@ layout: default
       </li>
     {% endfor %}
   </ul>
+</div>
 </div>
 
 <!-- 文章数据输出 -->
