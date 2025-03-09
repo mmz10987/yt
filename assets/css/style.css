@@ -35,3 +35,18 @@
   padding: 10px;
   color: #666;
 }
+/* 控制文章列表显隐 */
+.post-list {
+  transition: opacity 0.3s;
+}
+.post-list.hidden {
+  display: none !important;
+}
+
+/* 确保搜索结果框在最上层 */
+#searchResults {
+  position: absolute;
+  background: white;
+  max-height: 300px;
+  overflow-y: auto;
+}
