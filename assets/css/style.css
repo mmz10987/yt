@@ -1,0 +1,37 @@
+/* 搜索框样式 */
+.search-box {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 250px;
+  z-index: 100;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#searchResults {
+  margin-top: 5px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-result-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.no-results {
+  padding: 10px;
+  color: #666;
+}
