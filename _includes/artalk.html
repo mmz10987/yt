@@ -4,26 +4,14 @@
 <div id="Comments"></div>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const artalk = new Artalk({
+  new Artalk({
     el: '#Comments',
     pageKey: '{{ page.url }}',
-    pageTitle: '{{ page.title }}',
     server: '{{ site.artalk.server }}',
     site: '{{ site.artalk.site }}',
     placeholder: '{{ site.artalk.placeholder }}',
     darkMode: {{ site.artalk.darkMode }},
-    locale: '{{ site.artalk.locale }}',
-    nestMax: {{ site.artalk.nestMax }},
-    imgUpload: {{ site.artalk.imgUpload }},
-    emoticons: {
-      "表情": [
-        ["😀", "咧嘴笑"],
-        ["😃", "大笑"]
-      ]
-    }
-  });
-  
-  // 绑定到全局对象方便调试
-  window.artalk = artalk;
-});
+    locale: '{{ site.artalk.locale }}'
+  })
+})
 </script>
