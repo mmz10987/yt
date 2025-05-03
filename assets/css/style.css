@@ -73,3 +73,30 @@
     max-height: 200px;
   }
 }
+
+/* Waline 评论样式 */
+.comments-section {
+  margin: 40px 0;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+}
+
+#waline-comment {
+  --waline-theme-color: #27ae60;
+  --waline-active-color: #2ecc71;
+  --waline-border-radius: 8px;
+}
+
+#waline-comment .wl-editor {
+  min-height: 120px;
+  border-radius: 8px;
+}
+
+#waline-comment .wl-btn {
+  transition: all 0.3s ease;
+}
+
+#waline-comment .wl-card {
+  box-shadow: none;
+  border: 1px solid #eee;
+}
