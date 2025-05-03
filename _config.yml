@@ -9,3 +9,12 @@ collections:
     # 禁用默认页脚
 minima:
   show_footer: false
+# 在文件末尾添加以下配置
+waline:
+  serverURL: "http://110.42.45.236:8360"  # 您的自建服务器地址
+  lang: "zh-CN"                           # 显示语言
+  emoji: ["https://unpkg.com/@waline/emojis@1.1.0/weibo"]  # 表情包
+  requiredMeta: ["nick"]                  # 必填字段
+  login: "enable"                         # 登录方式
+  pageSize: 10                            # 每页评论数
+  darkMode: false                         # 暗黑模式
