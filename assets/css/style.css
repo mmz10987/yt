@@ -74,29 +74,19 @@
   }
 }
 
-/* Waline 评论样式 */
-.comments-section {
-  margin: 40px 0;
+/* Artalk 评论样式 */
+.artalk-comments {
+  margin: 50px 0;
   padding-top: 30px;
   border-top: 1px solid #eee;
 }
 
-#waline-comment {
-  --waline-theme-color: #27ae60;
-  --waline-active-color: #2ecc71;
-  --waline-border-radius: 8px;
+.atk-main-editor {
+  border-radius: 8px !important;
+  border: 1px solid #e0e0e0 !important;
+  padding: 15px !important;
 }
 
-#waline-comment .wl-editor {
-  min-height: 120px;
-  border-radius: 8px;
-}
-
-#waline-comment .wl-btn {
-  transition: all 0.3s ease;
-}
-
-#waline-comment .wl-card {
-  box-shadow: none;
-  border: 1px solid #eee;
+.atk-list-comments-wrap {
+  margin-top: 20px !important;
 }
