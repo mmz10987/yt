@@ -12,7 +12,7 @@ minima:
 # 在文件末尾添加以下配置
 artalk:
   server: "http://110.42.45.236:23366"  # Artalk 服务地址
-  site: "MyBlog"                        # 需与后台站点名一致
+  site: "My Blog Site"                        # 需与后台站点名一致
   placeholder: "理性发言，共建社区..."  
   pageKey: "{{ page.url }}"             # 文章唯一标识
   darkMode: false
