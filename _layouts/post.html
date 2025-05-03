@@ -11,3 +11,13 @@ layout: default
     {{ content }}
   </div>
 </article>
+<!-- 在文章内容之后添加 -->
+<article class="post">
+  [...原有文章内容...]
+  
+  <!-- 新增评论区域 -->
+  <div class="comments-section">
+    <h3>评论</h3>
+    {% include waline.html %}
+  </div>
+</article>
