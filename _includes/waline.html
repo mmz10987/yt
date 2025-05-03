@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+
+<div id="waline-comment"></div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  Waline.init({
+    el: '#waline-comment',
+    serverURL: '{{ site.waline.serverURL }}',
+    path: '{{ page.url }}',
+    lang: '{{ site.waline.lang }}',
+    emoji: {{ site.waline.emoji | jsonify }},
+    requiredMeta: {{ site.waline.requiredMeta | jsonify }},
+    login: '{{ site.waline.login }}',
+    pageSize: {{ site.waline.pageSize }},
+    dark: '{{ site.waline.darkMode }}',
+    imageUploader: false
+  });
+});
+</script>
