@@ -1,3 +1,17 @@
+<script>
+// 在初始化前添加协议强制
+const artalkServer = '{{ site.artalk.server }}'.replace(/^https?:/, 'http:');
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  new Artalk({
+    el: '#Comments',
+    server: artalkServer,  // 使用修正后的地址
+    // 其他参数保持不变...
+  })
+})
+</script>
 <link href="http://110.42.45.236:23366/dist/Artalk.css" rel="stylesheet">
 <script src="http://110.42.45.236:23366/dist/Artalk.js"></script>
 
@@ -15,17 +29,4 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 })
 </script>
-<script>
-// 在初始化前添加协议强制
-const artalkServer = '{{ site.artalk.server }}'.replace(/^https?:/, 'http:');
-</script>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  new Artalk({
-    el: '#Comments',
-    server: artalkServer,  // 使用修正后的地址
-    // 其他参数保持不变...
-  })
-})
-</script>
